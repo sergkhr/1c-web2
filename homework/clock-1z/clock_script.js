@@ -1,13 +1,13 @@
 let canvas = document.getElementById("workspace");
+let secArrows = [];
+let minArrows = [];
+let hourArrows = [];
 let R = 200;
 let x = 300, y = 300;
 let context = canvas.getContext("2d");
 let circle = new Path2D();
 let divisionsNorm = new Path2D();
 let divisionsImpor = new Path2D();
-let secondsArrow = new Path2D();
-let minutesArrow = new Path2D();
-let hoursArrow = new Path2D();
 circle.arc(x, y, R, 0, 2 * Math.PI);
 function makeDivisions(){
     for(let d = 0; d < 60; d++){
@@ -32,32 +32,45 @@ function makeDivisions(){
     }
 }
 function makeArrows(){
-    let date = new Date();
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
-    let seconds = date.getSeconds();
-    let secondsAngle = (seconds / 60) * 2 * Math.PI;
-    secondsAngle = Math.PI / 2 - secondsAngle;
-    let minutesAngle = (minutes / 60) * 2 * Math.PI;
-    minutesAngle = Math.PI / 2 - minutesAngle;
-    let hoursAngle = ((hours % 12) / 12) * 2 * Math.PI;
-    hoursAngle = Math.PI / 2 - hoursAngle;
-    let secX = 0.93 * (Math.cos(secondsAngle) * R) + x;
-    let secY = 0.93 * (-Math.sin(secondsAngle) * R) + y;
-    let minX = 0.70 * (Math.cos(minutesAngle) * R) + x;
-    let minY = 0.70 * (-Math.sin(minutesAngle) * R) + y;
-    let hourX = 0.55 * (Math.cos(hoursAngle) * R) + x;
-    let hourY = 0.55 * (-Math.sin(hoursAngle) * R) + y;
-    secondsArrow.moveTo(x, y);
-    secondsArrow.lineTo(secX, secY);
-    minutesArrow.moveTo(x, y);
-    minutesArrow.lineTo(minX, minY);
-    hoursArrow.moveTo(x, y);
-    hoursArrow.lineTo(hourX, hourY);
+    
+    for(a = 0; a < 60; a++){
+        let secondsArrow = new Path2D();
+        let minutesArrow = new Path2D();
+        let secondsAngle = (a / 60) * 2 * Math.PI;
+        secondsAngle = Math.PI / 2 - secondsAngle;
+        let minutesAngle = (a / 60) * 2 * Math.PI;
+        minutesAngle = Math.PI / 2 - minutesAngle;
+        let secX = 0.93 * (Math.cos(secondsAngle) * R) + x;
+        let secY = 0.93 * (-Math.sin(secondsAngle) * R) + y;
+        let minX = 0.70 * (Math.cos(minutesAngle) * R) + x;
+        let minY = 0.70 * (-Math.sin(minutesAngle) * R) + y;
+        secondsArrow.moveTo(x, y);
+        secondsArrow.lineTo(secX, secY);
+        minutesArrow.moveTo(x, y);
+        minutesArrow.lineTo(minX, minY);
+        secArrows.push(secondsArrow);
+        minArrows.push(minutesArrow);
+    }
+    for(h = 0; h < 12; h++){
+        let hoursArrow = new Path2D();
+        let hoursAngle = ((h % 12) / 12) * 2 * Math.PI;
+        hoursAngle = Math.PI / 2 - hoursAngle;
+        let hourX = 0.55 * (Math.cos(hoursAngle) * R) + x;
+        let hourY = 0.55 * (-Math.sin(hoursAngle) * R) + y;
+        hoursArrow.moveTo(x, y);
+        hoursArrow.lineTo(hourX, hourY);
+        hourArrows.push(hoursArrow);
+    }
+    
+    
 }
 
 function drawWatch(){
-    //makeArrows();
+    let date = new Date();
+    let hours = date.getHours();
+    hours = hours % 12;
+    let minutes = date.getMinutes();
+    let seconds = date.getSeconds();
     context.clearRect(0, 0, 600, 600);
     context.lineWidth = 2;
     context.stroke(divisionsImpor);
@@ -67,12 +80,12 @@ function drawWatch(){
     context.stroke(circle);
     context.lineWidth = 2;
     context.strokeStyle = "red";
-    context.stroke(secondsArrow);
+    context.stroke(secArrows[seconds]);
     context.strokeStyle = "black";
     context.lineWidth = 4;
-    context.stroke(minutesArrow);
+    context.stroke(minArrows[minutes]);
     context.lineWidth = 7;
-    context.stroke(hoursArrow);
+    context.stroke(hourArrows[hours]);
 
     setTimeout(drawWatch, 1000);
 }
