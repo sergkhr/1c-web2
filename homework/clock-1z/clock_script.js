@@ -9,28 +9,27 @@ let circle = new Path2D();
 let divisionsNorm = new Path2D();
 let divisionsImpor = new Path2D();
 circle.arc(x, y, R, 0, 2 * Math.PI);
-function makeDivisions(){
-    for(let d = 0; d < 60; d++){
-        let angle = (d / 60) * 2 * Math.PI;
-        let pX = Math.cos(angle) * R;
-        let pY = -Math.sin(angle) * R;
-        let qX = 0.90 * pX;
-        let qY = 0.90 * pY;
-        pX += x; pY += y;
-        qX += x; qY += y;
-    
-        if(d % 5 == 0){
-            qX = 0.87 * (pX - x) + x;
-            qY = 0.87 * (pY - y) + y;
-            divisionsImpor.moveTo(pX, pY);
-            divisionsImpor.lineTo(qX, qY);
-        }else{
-            divisionsNorm.moveTo(pX, pY);
-            divisionsNorm.lineTo(qX, qY);
-        }
-        
+for(let d = 0; d < 60; d++){
+    let angle = (d / 60) * 2 * Math.PI;
+    let pX = Math.cos(angle) * R;
+    let pY = -Math.sin(angle) * R;
+    let qX = 0.90 * pX;
+    let qY = 0.90 * pY;
+    pX += x; pY += y;
+    qX += x; qY += y;
+
+    if(d % 5 == 0){
+        qX = 0.87 * (pX - x) + x;
+        qY = 0.87 * (pY - y) + y;
+        divisionsImpor.moveTo(pX, pY);
+        divisionsImpor.lineTo(qX, qY);
+    }else{
+        divisionsNorm.moveTo(pX, pY);
+        divisionsNorm.lineTo(qX, qY);
     }
+    
 }
+<<<<<<< HEAD
 function makeArrows(){
     
     for(let a = 0; a < 60; a++){
@@ -71,6 +70,9 @@ function drawWatch(){
     hours = hours % 12;
     let minutes = date.getMinutes();
     let seconds = date.getSeconds();
+=======
+function drawWatch(){
+>>>>>>> parent of 2573fc9... arrows added (not moving, reboot neded to move).
     context.clearRect(0, 0, 600, 600);
     context.lineWidth = 2;
     context.stroke(divisionsImpor);
@@ -78,6 +80,7 @@ function drawWatch(){
     context.stroke(divisionsNorm);
     context.lineWidth = 3;
     context.stroke(circle);
+<<<<<<< HEAD
     context.lineWidth = 2;
     context.strokeStyle = "red";
     context.stroke(secArrows[seconds]);
@@ -86,9 +89,10 @@ function drawWatch(){
     context.stroke(minArrows[minutes]);
     context.lineWidth = 7;
     context.stroke(hourArrows[hours]);
+=======
+>>>>>>> parent of 2573fc9... arrows added (not moving, reboot neded to move).
 
     setTimeout(drawWatch, 1000);
 }
-makeArrows();
-makeDivisions();
+
 drawWatch();
