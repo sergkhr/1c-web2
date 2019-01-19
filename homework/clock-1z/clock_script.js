@@ -33,7 +33,7 @@ function makeDivisions(){
 }
 function makeArrows(){
     
-    for(a = 0; a < 60; a++){
+    for(let a = 0; a < 60; a++){
         let secondsArrow = new Path2D();
         let minutesArrow = new Path2D();
         let secondsAngle = (a / 60) * 2 * Math.PI;
@@ -51,7 +51,7 @@ function makeArrows(){
         secArrows.push(secondsArrow);
         minArrows.push(minutesArrow);
     }
-    for(h = 0; h < 12; h++){
+    for(let h = 0; h < 12; h++){
         let hoursArrow = new Path2D();
         let hoursAngle = ((h % 12) / 12) * 2 * Math.PI;
         hoursAngle = Math.PI / 2 - hoursAngle;
