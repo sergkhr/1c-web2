@@ -29,7 +29,6 @@ for(let d = 0; d < 60; d++){
     }
     
 }
-<<<<<<< HEAD
 function makeArrows(){
     
     for(let a = 0; a < 60; a++){
@@ -70,9 +69,6 @@ function drawWatch(){
     hours = hours % 12;
     let minutes = date.getMinutes();
     let seconds = date.getSeconds();
-=======
-function drawWatch(){
->>>>>>> parent of 2573fc9... arrows added (not moving, reboot neded to move).
     context.clearRect(0, 0, 600, 600);
     context.lineWidth = 2;
     context.stroke(divisionsImpor);
@@ -80,7 +76,6 @@ function drawWatch(){
     context.stroke(divisionsNorm);
     context.lineWidth = 3;
     context.stroke(circle);
-<<<<<<< HEAD
     context.lineWidth = 2;
     context.strokeStyle = "red";
     context.stroke(secArrows[seconds]);
@@ -89,8 +84,6 @@ function drawWatch(){
     context.stroke(minArrows[minutes]);
     context.lineWidth = 7;
     context.stroke(hourArrows[hours]);
-=======
->>>>>>> parent of 2573fc9... arrows added (not moving, reboot neded to move).
 
     setTimeout(drawWatch, 1000);
 }
