@@ -6,12 +6,13 @@ button.addEventListener("click", function(){
     let max = -1;
     let mostWords = "";
     let text = textarea.value;
+    text = text.toLowerCase();
     console.log(text);
     text = text.replace(/[^\w\s]|_/g,"");
     text = text.replace(/\s+/g, " ");
     console.log(text);
-    text.trim();
-    text.toLowerCase();
+    text = text.trim();
+    console.log(text);
     let words = [];
     words = text.split(" ");
     console.log(words);
