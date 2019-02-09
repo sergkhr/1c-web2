@@ -17,7 +17,7 @@ button.addEventListener("click", function(){
     words = text.split(" ");
     console.log(words);
     words.forEach(function(word){
-        if(!(word in dictionary)){
+        if(!(word in dictionary) && word.length >= 4){
             dictionary[word] = 0;
         }
         dictionary[word] += 1;
