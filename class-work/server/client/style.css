@@ -1,0 +1,16 @@
+html,body{
+    height: 100%;
+    margin: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#request {
+    transform: scale(5);
+}
+div{
+    border: 1px solid grey;
+    border-radius: 15px;
+}
