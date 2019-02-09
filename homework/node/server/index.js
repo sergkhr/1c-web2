@@ -13,6 +13,15 @@ app.get("/",function(request, response) {
     response.send("Hello, " + name + "! I am " + mood + " too.");
 });
 
+function performActions(collection, data, query) {
+    console.log("insertin...");
+    collection.insert(data, function(){
+        console.log("inserted!");
+    });
+    console.log("deleting...");
+    collection.deleteMany(query);
+}
+
 mongoClient.connect("mongodb://localhost", function(err, client) {
     console.log(err);
     let sandbox = client.db("sandbox");
