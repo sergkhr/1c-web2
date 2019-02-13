@@ -9,27 +9,25 @@ let circle = new Path2D();
 let divisionsNorm = new Path2D();
 let divisionsImpor = new Path2D();
 circle.arc(x, y, R, 0, 2 * Math.PI);
-function makeDivisions(){
-    for(let d = 0; d < 60; d++){
-        let angle = (d / 60) * 2 * Math.PI;
-        let pX = Math.cos(angle) * R;
-        let pY = -Math.sin(angle) * R;
-        let qX = 0.90 * pX;
-        let qY = 0.90 * pY;
-        pX += x; pY += y;
-        qX += x; qY += y;
-    
-        if(d % 5 == 0){
-            qX = 0.87 * (pX - x) + x;
-            qY = 0.87 * (pY - y) + y;
-            divisionsImpor.moveTo(pX, pY);
-            divisionsImpor.lineTo(qX, qY);
-        }else{
-            divisionsNorm.moveTo(pX, pY);
-            divisionsNorm.lineTo(qX, qY);
-        }
-        
+for(let d = 0; d < 60; d++){
+    let angle = (d / 60) * 2 * Math.PI;
+    let pX = Math.cos(angle) * R;
+    let pY = -Math.sin(angle) * R;
+    let qX = 0.90 * pX;
+    let qY = 0.90 * pY;
+    pX += x; pY += y;
+    qX += x; qY += y;
+
+    if(d % 5 == 0){
+        qX = 0.87 * (pX - x) + x;
+        qY = 0.87 * (pY - y) + y;
+        divisionsImpor.moveTo(pX, pY);
+        divisionsImpor.lineTo(qX, qY);
+    }else{
+        divisionsNorm.moveTo(pX, pY);
+        divisionsNorm.lineTo(qX, qY);
     }
+    
 }
 function makeArrows(){
     
@@ -89,6 +87,5 @@ function drawWatch(){
 
     setTimeout(drawWatch, 1000);
 }
-makeArrows();
-makeDivisions();
+
 drawWatch();
