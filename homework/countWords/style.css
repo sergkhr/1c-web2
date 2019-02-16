@@ -2,9 +2,13 @@ html,body{
     height: 100%;
     margin: 0;
 }
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
 div{
-    position: fixed;
-    bottom: 0;
     width: 100%;
 }
 #sandbox{

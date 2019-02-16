@@ -13,4 +13,5 @@ body{
 div{
     border: 1px solid grey;
     border-radius: 15px;
+    font-size: 500%;
 }
