@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>логическое И</title>
+        <link rel="stylesheet" href="style.css"> 
+    </head>
+    <body>
+        <div id="app">
+            <input type="checkbox" v-model="both1">
+            &&
+            <input type="checkbox" v-model="both2">
+            <p v-bind:style="{'color': both1 && both2 ? colortrue : colorfalse}"> {{ both1 && both2 }}</p>
+        </div>
+        <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

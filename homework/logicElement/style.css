@@ -1,0 +1,15 @@
+body, html {
+    margin: 0;
+    height: 100%;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#app {
+    transform: scale(5);
+}
+p{
+    text-align: center;
+}
