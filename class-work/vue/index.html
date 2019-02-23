@@ -10,6 +10,18 @@
     </head>
     <body>
         <div id="app"> 
+            <ul>
+                <li v-for="(item, index) in items">
+                    {{ index + 1 }} -- {{ item.text }}
+                </li>
+                <li v-for="i in p">
+                    {{ i * p }}
+                </li>
+            </ul>
+
+
+
+
             <div>
                 <input type="number" v-model="n">
                 <p> кв: {{n * n}}</p>
