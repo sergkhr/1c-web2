@@ -6,10 +6,50 @@
         <style>
             .header-blue { color: blue;}
             .header-underlined {text-decoration: underline;}
+            .fade-enter-active, .fade-leave-active {
+                transition: opacity 1s ease;
+            }
+
+            .fade-enter, .fade-leave-to {
+                opacity: 0;
+            }
+
         </style>
     </head>
     <body>
-        <div id="app"> 
+        <div id="app">
+            список дел
+            <input type="text" v-model="thing" v-on:keydown.enter="addItem">  
+            <ol>
+                <li v-for="(item, index) in list" v-on:click="removeItem(index)">
+                    {{ item }}
+                </li>
+            </ol>
+
+            <button type="button" v-on:click="decrease">-</button>
+            {{ chislo }}
+            <button type="button" v-on:click="increase">+</button>
+            <p>кол-во изм. числа {{ changesCount }}</p>
+
+            <input type="checkbox" v-model="visible">
+            <transition name="fade">
+                <h1 v-show="visible">did you see me?</h1>
+            </transition>
+
+            <select v-model="numbers" multiple size="5">
+                <option v-for="i in 5">{{ i }}</option>
+            </select>
+            <p>среднее арифметическое: {{ average }}</p>
+
+            <input type="checkbox" v-model="visible1">
+            <h1 v-show="visible1">see me</h1>
+
+            <input type="checkbox" v-model="visible2">
+            <h1 v-if="visible2">element s v-if исчезает вовсе со страницы типо удаляется</h1>
+
+            <button type="button" v-on:click="double">удвоить</button>
+            <p>{{ number }}</p>
+            <button type="button" v-on:click="half">уменьшить в двое</button>
             <ul>
                 <li v-for="(item, index) in items">
                     {{ index + 1 }} -- {{ item.text }}
@@ -18,10 +58,6 @@
                     {{ i * p }}
                 </li>
             </ul>
-
-
-
-
             <div>
                 <input type="number" v-model="n">
                 <p> кв: {{n * n}}</p>
