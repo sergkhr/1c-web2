@@ -1,0 +1,31 @@
+html, body{
+    height: 100%;
+    margin: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.outer{
+    transform: scale(0.35);
+}
+.innerone {
+    transform: scale(5);
+    padding: 40px;
+}
+.innersec{
+    transform: scale(4);
+    padding: 30px;
+}
+.inner3 {
+    display: flex;
+}
+.star-invincible{
+    opacity: 0;
+}
+.inner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
