@@ -3,21 +3,15 @@
     <head>
         <meta charset="UTF-8">
         <title>Document</title>
-        <style>
-            .header-blue { color: blue;}
-            .header-underlined {text-decoration: underline;}
-            .fade-enter-active, .fade-leave-active {
-                transition: opacity 1s ease;
-            }
-
-            .fade-enter, .fade-leave-to {
-                opacity: 0;
-            }
-
-        </style>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <div id="root"></div>
+
+
+
         <div id="app">
+            <button id="button" type="button">alert</button>
             список дел
             <input type="text" v-model="thing" v-on:keydown.enter="addItem">  
             <ol>
@@ -76,6 +70,6 @@
 
         <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-        <script src="script.js"></script>
+        <script src="bundle.js"></script>
     </body>
 </html>
