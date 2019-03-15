@@ -9,7 +9,7 @@ app.post("/enroll", urlencodedParser, function(request, responce){
     responce.redirect("records.html");
 });
 
-app.use(express.static("/client"));
+app.use(express.static("../client"));
 
 
 app.listen(591);
