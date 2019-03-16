@@ -1,22 +1,40 @@
 let $ = require("jquery");
+let VueRouter = require("vue-router");
+let Enlarger = require("./components/enlarger.vue");
+let Reducer = require("./components/reducer.vue");
+
+
 
 $("#button").on("click", function(){
     alert("bla");
 });
 
+
 let dependency = require("./dependency.js");
 
 dependency.act();
 
+
+
 let Vue = require("vue");
-let App = require("./app.vue");
+let App = require("./components/app.vue");
+
+Vue.use(VueRouter);
+
+let router = new VueRouter({
+    routes: [
+        { path: "/add", component: Enlarger},
+        { path: "/substract", component: Reducer},
+    ]
+});
+
 let vm = new Vue({
     el: "#root",
+    router: router,
     render: function(createElement){
         return createElement(App);
     }
 });
-
 
 let vn = new Vue({
     el: "#app", // связан  именно div с id  app

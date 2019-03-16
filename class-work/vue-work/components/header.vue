@@ -5,7 +5,10 @@
 </style>
 
 <template>
-    <h1>{{ message }}</h1>
+    <div>
+        <h1>{{ username }}</h1>
+        <input type="text" v-model="username">
+    </div>
 </template>
 
 <script>
@@ -14,6 +17,7 @@
             return {
                 message: "Hello, component!"
             }
-        }
+        },
+        props: ["username"]
     };
 </script>
