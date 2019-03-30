@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "watch": "watchify main.js --outfile bundle.js --transform vueify --verbose",
+    "build": "browserify main.js --outfile bundle.js --transform vueify --verbose",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
