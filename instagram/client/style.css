@@ -4,13 +4,13 @@ html, body{
 }
 
 .page{
-    flex: 1;
     min-height: 100%;
     display: flex;
     flex-direction: column;
 }
 
 .focus {
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -10,7 +10,7 @@ Vue.use(VueRouter);
 
 let router = new VueRouter({
     routes: [
-        { path: "/register", components: Register }
+        { path: "/register", component: Register }
     ]
 });
 
