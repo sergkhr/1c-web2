@@ -23,7 +23,14 @@
         methods: {
             register: function() {
                 if(this.passwordA === this.passwordB){
-                    
+                    let promise = this.$auth.register(this.username, this.passwordA);
+                    promise.then(function() {
+                        console.log("пользователь точно зарегистрирован");
+                        this.$router.push("/login");
+                    });
+                    promise.catch(function(error) {
+                        alert("Ошибка: " +  error);
+                    });
                 }
             }
         }
