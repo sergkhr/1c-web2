@@ -6,6 +6,7 @@
                 <input type="password" class="form-control" placeholder="Пароль" v-model="passwordA">
                 <input type="password" class="form-control" placeholder=" Повтор пароля" v-model="passwordB">
                 <button type="button" class="btn btn-danger btn-block" v-on:click="register">Зарегистрироваться!</button>
+                <router-link to="/login">Войти!</router-link>
             </form>
         </div>
     </div>
