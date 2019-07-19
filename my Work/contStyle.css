@@ -1,0 +1,111 @@
+html{
+    margin: 0;
+    height: 100%;
+}
+body {
+    margin: 0;
+    height: 100%;
+}
+#contactMain {
+    display: flex;
+    justify-content: center;
+}
+#contactBigCont{
+    width: 1242px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    position: relative;
+    justify-content: center;
+}
+a{
+    text-decoration: underline;
+    cursor: pointer;
+}
+a:hover{
+    color: #0080FF;
+}
+#contactpodMain{
+    width: 1242px;
+    height: 100%;
+}
+.contactCarier {
+    height: 170px;
+    position: relative;
+    margin-left: 231px;
+    margin-right: 231px;
+    margin-bottom: 70px;
+    padding: 10px;
+    transition: height 1s ease-in-out 0s;
+}
+.contactCarierWhite{
+    border: solid 1px lightgrey;
+}
+.contactCarierBlue{
+    background-color: #0080FF;
+    color: white;
+}
+.contactImgCont{
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    width: 779px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.contactImg{
+    position: absolute;
+    transition: all 0.5s ease 0s;
+    cursor: pointer;
+}
+.img-notSel-pos{
+    top: 8px;
+}
+.img-sel-pos{
+    bottom: -32px;
+}
+.contactImgSelecting{
+    transform: rotateX(90deg);
+}
+.contactText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    font-size: 35px;
+    margin: 20px;
+}
+.contactMail{
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+}
+ .contactSelected{
+     height: 600px;
+     transition: height 1s ease-in-out 0s;
+}
+.contactInv{
+    opacity: 0;
+}
+.contPoint:hover{
+    cursor: pointer;
+}
+.contMoreInf {
+    text-align: center;
+    color: rgb(93, 92, 92);
+    cursor: pointer;
+}
+.contMoreInf:hover {
+    color: #0080FF;
+}
+.contMoreInfText {
+    transition: opacity 0.7s ease 0s;
+}
+.contactSize{
+    font-size: x-large;
+    line-height: 1.4;
+    height: 80%;
+    color: black;
+}
