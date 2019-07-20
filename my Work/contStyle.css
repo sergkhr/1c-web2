@@ -19,13 +19,24 @@ body {
     justify-content: center;
 }
 a{
-    text-decoration: underline;
     cursor: pointer;
-    color: black;
-    text-decoration-color: #0080FF;
+    font-family: "vida_32_probold";
+    transition: all 0.2s ease 0s;
+    border-bottom: 2px solid; 
 }
-a:hover{
-    color: #0080FF;
+.a-white{
+    color: black;
+}
+.a-white:hover{
+    color: black;
+    border-bottom-color: white;
+}
+.a-blue{
+    color: white;
+}
+.a-blue:hover{
+    color: white;
+    border-bottom-color: #0080FF;
 }
 #contactpodMain{
     width: 1242px;
@@ -37,10 +48,10 @@ a:hover{
     margin-right: 185px;
     margin-bottom: 70px;
     padding: 10px;
-    transition: height 1s ease-in-out 0s;
+    transition: height 0.5s ease-in-out 0s;
 }
 .contSpace{
-    height: 35px;
+    height: 0px;
 }
 .contactCarierWhite{
     border: solid 1px lightgrey;
@@ -61,12 +72,12 @@ a:hover{
 }
 .contactImgPodr{
     position: absolute;
-    transition: transform 0.5s ease 0s;
+    transition: transform 0.25s ease-in 0s;
     cursor: pointer;
 }
 .contactImgSvern{
     position: absolute;
-    transition: transform 0.5s ease 0s;
+    transition: transform 0.25s ease-out 0s;
     cursor: pointer;
 }
 .img-notSel-pos{
@@ -85,6 +96,7 @@ a:hover{
     padding: 5px;
     font-size: 45px;
     margin: 10px; 
+    font-family: "vida_32_proregular";
 }
 .contactMail{
     margin: 10px;
@@ -95,6 +107,24 @@ a:hover{
     justify-content: center;
     align-items: center;
     font-size: 30px;
+    font-family: "vida_32_proregular";
+}
+.contactMail > a{
+    font-family: "vida_32_proregular";
+    height: 30px;
+    border-bottom: 3px solid;
+}
+.contactMail > .a-white{
+    border-bottom-color: #0080FF;
+}
+.contactMail > .a-white:hover{
+    border-bottom-color: white;
+}
+.contactMail > .a-blue{
+    border-bottom-color: white;
+}
+.contactMail > .a-blue:hover{
+    border-bottom-color: #0080FF;
 }
  .contactSelected{
      height: 600px;
@@ -102,8 +132,25 @@ a:hover{
 .contactInv{
     opacity: 0;
 }
-.contPoint:hover{
-    cursor: pointer;
+.contactInfSvern{
+    overflow: hidden;
+    height: 0;
+    transition: all 0.5s ease-in-out 0s;
+    font-size: 17px;
+    margin-left: 50px;
+    margin-right: 50px; 
+    line-height: 1.2;
+}
+.contactInfBig{
+    overflow: hidden;
+    font-size: 17px;
+    margin-top: 25px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 25px; 
+    line-height: 1.2;
+    transition: all 0.5s ease-in-out 0s;
+    padding-bottom: 10px;
 }
 .contactInf {
     overflow: hidden;

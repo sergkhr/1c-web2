@@ -2,11 +2,20 @@ let imgButtonsPodr = document.getElementsByClassName("contactImgPodr");
 let imgButtonsSvern = document.getElementsByClassName("contactImgSvern");
 let imgButtonConts = document.getElementsByClassName("contactImgCont");
 let Cariers = document.getElementsByClassName("contactCarier");
+let Texts = document.getElementsByClassName("kostil");
 let selected = [];
 let cariersHeight = [];
+let textsHeights = [];
+
+for(let i = 0; i < Texts.length; i++){
+    textsHeights.push(getComputedStyle(Texts[i]).height);
+    console.log(getComputedStyle(Texts[i]).height);
+    Texts[i].classList.add("contactInfSvern");
+    Texts[i].classList.remove("contactInfBig");
+    Texts[i].classList.remove("contactInv");
+}
 
 for(let i = 0; i < Cariers.length; i++){
-    console.log(getComputedStyle(Cariers[i]).height);
     cariersHeight.push(getComputedStyle(Cariers[i]).height);
     Cariers[i].style.height = getComputedStyle(Cariers[i]).height;
 }
@@ -18,7 +27,10 @@ for(let i = 0; i < imgButtonsPodr.length; i++){
     imgButtonsSvern[i].addEventListener("click", function(){
         //открытие блока
         if (!selected[i]){
-            Cariers[i].style.height = "600px";
+            Cariers[i].style.height = Number(cariersHeight[i].replace("px", "")) + Number(textsHeights[i].replace("px", "")) + 10 + "px";
+            Texts[i].classList.remove("contactInfSvern");
+            Texts[i].classList.add("contactInfBig");
+            Texts[i].style.height = textsHeights[i];
             selected[i] = true;
             imgButtonsPodr[i].classList.add("contactImgSelecting");
             imgButtonsSvern[i].classList.add("contactImgSelecting");
@@ -31,11 +43,14 @@ for(let i = 0; i < imgButtonsPodr.length; i++){
                 imgButtonsPodr[i].classList.remove("img-notSel-pos");
                 imgButtonsSvern[i].classList.add("img-sel-pos");
                 imgButtonsSvern[i].classList.add("img-sel-pos");
-            }, 500);
+            }, 250);
             
         } else { 
             //закрытие блока
             Cariers[i].style.height = cariersHeight[i];
+            Texts[i].classList.add("contactInfSvern");
+            Texts[i].classList.remove("contactInfBig");
+            Texts[i].style.height = "0px";
             selected[i] = false;
             imgButtonsPodr[i].classList.add("contactImgSelecting");
             imgButtonsSvern[i].classList.add("contactImgSelecting");
@@ -48,7 +63,7 @@ for(let i = 0; i < imgButtonsPodr.length; i++){
                 imgButtonsSvern[i].classList.remove("img-sel-pos");
                 imgButtonsPodr[i].classList.add("img-notSel-pos");
                 imgButtonsSvern[i].classList.add("img-notSel-pos");
-            }, 500);
+            }, 250);
             
         }    
     });
