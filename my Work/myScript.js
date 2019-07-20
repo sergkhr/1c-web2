@@ -3,6 +3,14 @@ let imgButtonsSvern = document.getElementsByClassName("contactImgSvern");
 let imgButtonConts = document.getElementsByClassName("contactImgCont");
 let Cariers = document.getElementsByClassName("contactCarier");
 let selected = [];
+let cariersHeight = [];
+
+for(let i = 0; i < Cariers.length; i++){
+    console.log(getComputedStyle(Cariers[i]).height);
+    cariersHeight.push(getComputedStyle(Cariers[i]).height);
+    Cariers[i].style.height = getComputedStyle(Cariers[i]).height;
+}
+
 for (let i = 0; i < imgButtonsPodr.length; i++){
     selected.push(false);
 }
@@ -10,7 +18,7 @@ for(let i = 0; i < imgButtonsPodr.length; i++){
     imgButtonsSvern[i].addEventListener("click", function(){
         //открытие блока
         if (!selected[i]){
-            Cariers[i].classList.add("contactSelected");
+            Cariers[i].style.height = "600px";
             selected[i] = true;
             imgButtonsPodr[i].classList.add("contactImgSelecting");
             imgButtonsSvern[i].classList.add("contactImgSelecting");
@@ -27,7 +35,7 @@ for(let i = 0; i < imgButtonsPodr.length; i++){
             
         } else { 
             //закрытие блока
-            Cariers[i].classList.remove("contactSelected");
+            Cariers[i].style.height = cariersHeight[i];
             selected[i] = false;
             imgButtonsPodr[i].classList.add("contactImgSelecting");
             imgButtonsSvern[i].classList.add("contactImgSelecting");

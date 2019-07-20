@@ -5,6 +5,7 @@ html{
 body {
     margin: 0;
     height: 100%;
+    font-family: Georgia;
 }
 #contactMain {
     display: flex;
@@ -20,6 +21,8 @@ body {
 a{
     text-decoration: underline;
     cursor: pointer;
+    color: black;
+    text-decoration-color: #0080FF;
 }
 a:hover{
     color: #0080FF;
@@ -29,16 +32,19 @@ a:hover{
     height: 100%;
 }
 .contactCarier {
-    height: 170px;
     position: relative;
-    margin-left: 231px;
-    margin-right: 231px;
+    margin-left: 185px;
+    margin-right: 185px;
     margin-bottom: 70px;
     padding: 10px;
     transition: height 1s ease-in-out 0s;
 }
+.contSpace{
+    height: 35px;
+}
 .contactCarierWhite{
     border: solid 1px lightgrey;
+    color: black;
 }
 .contactCarierBlue{
     background-color: #0080FF;
@@ -48,7 +54,7 @@ a:hover{
     display: flex;
     justify-content: center;
     height: 40px;
-    width: 779px;
+    width: 872px;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -77,19 +83,21 @@ a:hover{
     justify-content: center;
     align-items: center;
     padding: 5px;
-    font-size: 35px;
-    margin: 20px;
+    font-size: 45px;
+    margin: 10px; 
 }
 .contactMail{
-    height: 60px;
+    margin: 10px;
+    padding: 5px;
+    height: 30px;
+    margin-top: 5px; 
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 35px;
+    font-size: 30px;
 }
  .contactSelected{
      height: 600px;
-     transition: height 1s ease-in-out 0s;
 }
 .contactInv{
     opacity: 0;
@@ -99,6 +107,12 @@ a:hover{
 }
 .contactInf {
     overflow: hidden;
+    font-size: 17px;
+    margin-top: 25px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 25px; 
+    line-height: 1.2;
 }
 .contactSize{
     font-size: x-large;
